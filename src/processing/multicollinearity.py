@@ -1,6 +1,6 @@
 import pandas as pd
 from statsmodels.stats.outliers_influence import variance_inflation_factor
-def multicollinearity(df, threshold, target):
+def multicollinearity(df, target):
     X = df.drop(target, axis = 1)
     vif_data = pd.DataFrame()
     vif_data["Feature"] = X.columns
