@@ -13,15 +13,4 @@ def lasso(X_train, y_train, X_test, y_test):
     with open ('../conf/best_lasso', 'wb') as f:
         pickle.dump(best_lasso, f)
     
-    with open('../conf/best_lasso', 'rb') as f:
-        model = pickle.load(f)
     
-    
-    score = model.score(X_test, y_test)
-    y_pred = model.predict(X_test)
-    mae = mean_absolute_error(y_test, y_pred)
-    mse = mean_squared_error(y_test, y_pred)
-    print(f"Mean Absolute Error (MAE): {mae:.2f}")
-    print(f"Mean Squared Error (MSE): {mse:.2f}")
-    print(f"Score:{score}")
-    return score, model
