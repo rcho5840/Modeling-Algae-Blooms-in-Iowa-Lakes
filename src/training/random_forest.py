@@ -1,9 +1,8 @@
 from sklearn import ensemble
-from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.model_selection import GridSearchCV
 import pickle
 
-def random_forest(X_train, y_train, X_test, y_test):
+def random_forest(X_train, y_train):
     param_grid = {
         'n_estimators': [100, 200, 300, 400],
         'max_depth' : [None, 4, 8],
@@ -14,6 +13,6 @@ def random_forest(X_train, y_train, X_test, y_test):
     forest_grid_search.fit(X_train, y_train)
     best_random_forest = forest_grid_search.best_estimator_
     
-    with open ('../conf/best_random_forest', 'wb') as f:
+    with open ('../conf/models/best_random_forest', 'wb') as f:
         pickle.dump(best_random_forest, f)
     
