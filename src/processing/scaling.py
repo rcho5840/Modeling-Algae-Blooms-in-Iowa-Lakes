@@ -2,6 +2,5 @@ from sklearn.preprocessing import StandardScaler
 
 def scaling(data, cols):
     scaler = StandardScaler()
-    scaler.fit(data[cols])
-    data[cols] = scaler.transform(data[cols])
+    data[cols] = scaler.fit_transform(data[cols])
     return data
