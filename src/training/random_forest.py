@@ -4,7 +4,7 @@ import pickle
 
 def random_forest(X_train, y_train):
     param_grid = {
-        'n_estimators': [100, 200, 300, 400],
+        'n_estimators': [1000, 1200, 1500],
         'max_depth' : [None, 4, 8],
         'min_samples_split': [2, 4, 6]
         
